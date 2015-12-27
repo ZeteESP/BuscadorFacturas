@@ -139,11 +139,11 @@ public class Buscafacturas extends javax.swing.JFrame {
                         .addGap(36, 36, 36)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(resum1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3)
                             .addComponent(resum2)
                             .addComponent(resum3)
-                            .addComponent(resum4))))
+                            .addComponent(resum4)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2)
@@ -180,14 +180,13 @@ public class Buscafacturas extends javax.swing.JFrame {
                                 .addComponent(resum3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(resum4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                                 .addComponent(fcrb)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(idps)
-                                .addGap(42, 42, 42))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jScrollPane3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addGap(24, 24, 24))
+                            .addComponent(jScrollPane3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(clipboard)))
@@ -272,27 +271,27 @@ public class Buscafacturas extends javax.swing.JFrame {
                             }
                         }
 
-                    }
-                    // punto en el que se si he encontrado o no la factura
-                    if (encontrado) {
-                        encontrado = false;   // he encontrado la factura y la he copiado al destino
-                        cuentaFraE++;
-                        porcFraNoE = ((cuentaFraNoE * 100) / facturasBuscar.length);
-                        resum1.setText("Fra total a buscar: " + facturasBuscar.length);
-                        resum2.setText("Fra trobades: " + cuentaFraE);
-                        resum3.setText("Fra no trobades: " + cuentaFraNoE);
-                        resum4.setText("No trobades: " + porcFraNoE + " %");
-                    } //else punto en el que se que no he encontrado la factura
-                    else {
-                        cuentaFraNoE++;
-                        porcFraNoE = ((cuentaFraNoE * 100) / facturasBuscar.length);
-                        resum1.setText("Fra total a buscar: " + facturasBuscar.length);
-                        resum2.setText("Fra trobades: " + cuentaFraE);
-                        resum3.setText("Fra no trobades: " + cuentaFraNoE);
-                        resum4.setText("No trobades: " + porcFraNoE + " %");
-                        //facturasNoE.add(fac);
-                        salidaNoE.setText(salidaNoE.getText() + fac.replace(".pdf", "") + "\n");
+                        // punto en el que se si he encontrado o no la factura
+                        if (encontrado) {
+                            encontrado = false;   // he encontrado la factura y la he copiado al destino
+                            cuentaFraE++;
+                            porcFraNoE = ((cuentaFraNoE * 100) / facturasBuscar.length);
+                            resum1.setText("Fra total a buscar: " + facturasBuscar.length);
+                            resum2.setText("Fra trobades: " + cuentaFraE);
+                            resum3.setText("Fra no trobades: " + cuentaFraNoE);
+                            resum4.setText("No trobades: " + porcFraNoE + " %");
+                        } //else punto en el que se que no he encontrado la factura
+                        else {
+                            cuentaFraNoE++;
+                            porcFraNoE = ((cuentaFraNoE * 100) / facturasBuscar.length);
+                            resum1.setText("Fra total a buscar: " + facturasBuscar.length);
+                            resum2.setText("Fra trobades: " + cuentaFraE);
+                            resum3.setText("Fra no trobades: " + cuentaFraNoE);
+                            resum4.setText("No trobades: " + porcFraNoE + " %");
+                            //facturasNoE.add(fac);
+                            salidaNoE.setText(salidaNoE.getText() + fac.replace(".pdf", "") + "\n");
 
+                        }
                     }
                 }
             }
@@ -337,6 +336,8 @@ public class Buscafacturas extends javax.swing.JFrame {
         }
         return encontrado;
     }
+    
+    
 
     /**
      * @param args the command line arguments
